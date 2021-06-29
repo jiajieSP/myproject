@@ -1,12 +1,25 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aihub</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <title>TBC</title>
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-sm" style="background-color: #74A739">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="{% static "img/aihub.jpg" %}" alt="">l</a>
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Account Name</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 {% block content%}
 
 {% endblock%}

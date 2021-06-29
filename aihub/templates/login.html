@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    {% extends 'base.html' %}
+    {% load static %}
 <head>
-<title>Welcome Back</title>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <title>Login</title>
 </head>
 <body>
-
- {% extends 'base.html' %}
-
  {% block content %}
-<h1>Login Page</h1>
-<p>This is the homepage</p>
-<p>Hi my name is {{name}}</p>
+ <title>Login</title>
+<div class="back">
+    <div class="container-sm py-5 content"></div>
 
-<form action="add", method="POST">
 
-    Username : <input type="text" name="username"><br>
-    Password : <input type="text" name="password"><br>
-    <input type="submit">
+    <div class="container-xl border py-5 content">
+        <div class="d-flex py-5 flex-fill flex-column justify-content-center align-items-center mx-auto border mt-2 mb-2" style="width: 50%; height: 75%;">
+            <div class="container d-flex flex-fill flex-column justify-content-center align-items-center mb-sm-4">
+                <h2 class="display-2" style="color: #74A739">Sign In</h2>
+                <hr style="width: 50%; height: 0.5rem; border-width: 0; color:#74A739; background-color:#74A739;">
+            </div>
 
-</form>
+            <div class="container d-flex flex-fill flex-column justify-content-center align-items-center">
+                <form action="/save" method="post">  
+                    <div class="form-group">
+                        <label class="px-3" for="email" style="background-color: #74A739;">Email address:</label>  
+                        <input type="email" class="form-control border border-green" id="email"> 
+                    </div> 
+
+                    <div class="form-group">  
+                        <label class="px-3" for="pwd" style="background-color: #74A739;">Password:</label>  
+                        <input type="password" class="form-control border border-green" id="pwd">  
+                    </div>
+
+                    <button type="submit" class="btn border border-green text-green">Login</button>  
+                </form>
+            </div>  
+        </div>
+    </div>
+</div>
 {%endblock%}
 </body>
 </html>
