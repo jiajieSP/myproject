@@ -8,10 +8,15 @@
  {% extends 'base.html' %}
 
  {% block content %}
-<h1>Welcome Back</h1>
+<h1>Login Page</h1>
 <p>This is the homepage</p>
 <p>Hi my name is {{name}}</p>
 
+<form action="add", method="POST">
+
+    Username : <input type="text" name="username"><br>
+    Password : <input type="text" name="password"><br>
+    <input type="submit">
 
 </form>
 {%endblock%}
