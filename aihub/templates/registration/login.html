@@ -11,6 +11,7 @@
     <title>Login</title>
 </head>
 <body>
+    
  {% block content %}
  <title>Login</title>
 <div class="d-flex back py-2 container-fluid h-100 flex-grow-1">
@@ -24,22 +25,33 @@
             </div>
 
             <div class="container d-flex flex-fill flex-column justify-content-center align-items-center">
-                <form action="/save" method="post">  
-                    <div class="form-group">
+                <!-- <form action="/save" method="post"> -->
+                <form method="post"> 
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <!-- <div class="form-group">
+                        <p>
+                            <label for="id_username">Username:</label> 
+                            <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                        </p>
                         <label class="px-3 text-white" for="email" style="background-color: #74A739;">Email address:</label>  
                         <input type="email" class="form-control border border-green mb-4" id="email"> 
                     </div> 
 
-                    <div class="form-group">  
+                    <div class="form-group"> 
+                        <p>
+                            <label for="id_password">Password:</label>
+                            <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+                        </p>
                         <label class="px-3 text-white" for="pwd" style="background-color: #74A739;">Password:</label>  
                         <input type="password" class="form-control border border-green mb-4" id="pwd">  
-                    </div>
+                    </div> -->
 
                     <button type="submit" class="btn btn-lg px-5 border border-green text-green d-flex justify-content-center alight-items-center flex-fill mx-auto">Login</button>  
                 </form>
             </div>  
         </div>
-        <div class="container-sm py-5 content flex-grow-1"></div>
+        <!-- <div class="container-sm py-5 content flex-grow-1"></div> -->
         
     </div>
 </div>
