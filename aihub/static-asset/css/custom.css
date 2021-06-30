@@ -10,6 +10,13 @@
     background-color: #D9D9D9 !important;
 }
 
+.text-white {
+    color: #D9D9D9 !important;
+}
+.back-color {
+    background-color:#74A739 !important ;
+}
+
 .content {
     background-color: white !important;
 }

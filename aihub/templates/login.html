@@ -13,33 +13,34 @@
 <body>
  {% block content %}
  <title>Login</title>
-<div class="back">
-    <div class="container-sm py-5 content"></div>
-
+<div class="d-flex back py-2 container-fluid h-100 flex-grow-1">
 
     <div class="container-xl border py-5 content">
+        <div class="container-sm py-5 content"></div>
         <div class="d-flex py-5 flex-fill flex-column justify-content-center align-items-center mx-auto border mt-2 mb-2" style="width: 50%; height: 75%;">
             <div class="container d-flex flex-fill flex-column justify-content-center align-items-center mb-sm-4">
-                <h2 class="display-2" style="color: #74A739">Sign In</h2>
+                <h2 class="display-2 text-green">Sign In</h2>
                 <hr style="width: 50%; height: 0.5rem; border-width: 0; color:#74A739; background-color:#74A739;">
             </div>
 
             <div class="container d-flex flex-fill flex-column justify-content-center align-items-center">
                 <form action="/save" method="post">  
                     <div class="form-group">
-                        <label class="px-3" for="email" style="background-color: #74A739;">Email address:</label>  
-                        <input type="email" class="form-control border border-green" id="email"> 
+                        <label class="px-3 text-white" for="email" style="background-color: #74A739;">Email address:</label>  
+                        <input type="email" class="form-control border border-green mb-4" id="email"> 
                     </div> 
 
                     <div class="form-group">  
-                        <label class="px-3" for="pwd" style="background-color: #74A739;">Password:</label>  
-                        <input type="password" class="form-control border border-green" id="pwd">  
+                        <label class="px-3 text-white" for="pwd" style="background-color: #74A739;">Password:</label>  
+                        <input type="password" class="form-control border border-green mb-4" id="pwd">  
                     </div>
 
-                    <button type="submit" class="btn border border-green text-green">Login</button>  
+                    <button type="submit" class="btn btn-lg px-5 border border-green text-green d-flex justify-content-center alight-items-center flex-fill mx-auto">Login</button>  
                 </form>
             </div>  
         </div>
+        <div class="container-sm py-5 content flex-grow-1"></div>
+        
     </div>
 </div>
 {%endblock%}
