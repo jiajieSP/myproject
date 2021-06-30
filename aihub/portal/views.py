@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     return render(request, 'index.html')
-    # return HttpResponse("<h1>hello world my name is jia jie</h1>")
 
 # @csrf_exempt
 # def add(request):

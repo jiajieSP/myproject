@@ -20,3 +20,19 @@
 .content {
     background-color: white !important;
 }
+
+.contain {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-menu{
+    color: #D9D9D9 !important;
+    background-color: #808080 !important;
+}
+
+.content-top {
+    border-top: #808080 !important;
+}
