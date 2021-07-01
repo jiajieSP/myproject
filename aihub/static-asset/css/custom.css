@@ -36,3 +36,23 @@
 .content-top {
     border-top: #808080 !important;
 }
+
+.nav-menu {
+display: block;
+  padding: 0.5rem 1rem;
+  color: #D9D9D9;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu {
+      transition: none;
+    }
+  }
+
+  .nav-menu:hover, .nav-menu:focus {
+    color: #74A739;
+    border-left: #74A739;
+    border-left: 3px solid;
+  }

@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- Custom -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+
     <title>TBC</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-sm" style="background-color: #74A739">
+    <!-- Top Banner -->
+    <nav class="navbar back-color">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{% static "img/aihub.jpg" %}" alt="">l</a>
-            <div class="navbar-header">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Account Name</a></li>
-                </ul>
-            </div>
+
+            <a class="navbar-brand" href="#">
+                <img src="{% static "img/aihub.jpg" %}" alt="" loading="lazy" />
+            </a>
         </div>
     </nav>
 
-    <div class="back px-5 pt-2 pb-2">
-        <div class="content px-2 me-1 ms-1 pb-2">
-{% block content%}
+    <div class="back px-5 pt-2 pb-2 min-vh-100">
+        <button class="navbar-toggler display-menu" type="button" data-mdb-toggle="collapse"
+                            data-mdb-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+        <div class="content px-2 me-1 ms-1 pb-2 min-vh-100">
 
-{% endblock%}
+
+            <div class="container ms-0">
+                <div class="row justify-content-md-center">
+                    <div class="col ps-0 col-md-auto p-0">
+                        
+                        <div class="collapse" id="navbarToggleExternalContent">
+                            <div class="col-md-auto display-menu d-inline-flex">
+                                <nav class="navbar d-inline-flex">
+                                    <ul class="navbar-nav">
+                                        <li class="">Main</li>
+                                        <li class="nav-item">
+                                            <a class="nav-menu active" href="#">Resource</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-menu" href="#">Search</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-menu" href="#">Feedback</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-menu" href="#">Tools</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-menu" href="#">Admin</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            {% if user.is_authenticated%}
+                                            <a class="nav-menu" href="{% url 'logout' %}">Log Out</a>
+                                            {%endif%}
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col p-0">
+                        {% block content%}
+
+                        {% endblock%}
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 </body>
+
 </html>
