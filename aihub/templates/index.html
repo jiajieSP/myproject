@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Welcome Back</title>
+    <title>Welcome Back</title>
 </head>
+
 <body>
 
- {% extends 'base.html' %}
+    {% extends 'base.html' %}
 
-{% block title%} Home {% endblock %}
+    {% block title%} Home {% endblock %}
 
- {% block content %}
+    {% block content %}
 
- <div class="container ps-3">
-     <div class="row justify-content-md-center">
-         <div class="col ps-0">
-            <div class="container ps-0">
-                <ul class="ps-0">
-                    <h3 class="text-green display-6 border-bottom ps-0">Welcome Back,</h3>
-                    <li class="list-group-item d-flex justify-content-between alight-items-center back-color ps-0">LATEST UPDATE
-                        <span class="badge badge-pill back ps-0">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between alight-items-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptas beatae, quidem id, 
-                        ea voluptate nulla dignissimos illum voluptatum explicabo maiores blanditiis rerum quam, 
-                        asperiores esse eligendi fugit nisi itaque.
-                    </li>
-                </ul>
+    <div class="container ps-3">
+        <div class="row justify-content-md-center">
+            <div class="col ps-0">
+                <div class="container ps-0">
+                    <ul class="ps-0">
+                        <h3 class="text-green display-6 border-bottom ps-0 my-5 ms-3">Welcome Back,</h3>
+                        <li
+                            class="list-group-item d-flex justify-content-between alight-items-center back-color d-inline-flex ms-3">
+                            <h6 class="m-auto">LATEST UPDATE</h6>
+                            <span class="badge badge-pill back mx-3">14</span>
+                        </li>
+                        <li class="list-group-item border ms-3">
+                            <div class="container">
+                                <div class="row row-cols-2">
+                                    <div class="col border-bottom">
+                                        Title
+                                    </div>
+                                    <div class="col border-bottom">
+                                        {{user.get_username}}
+                                    </div>
+                                    <div class="col-12 py-2">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptas beatae,
+                                        quidem id,
+                                        ea voluptate nulla dignissimos illum voluptatum explicabo maiores blanditiis
+                                        rerum quam,
+                                        asperiores esse eligendi fugit nisi itaque.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
+    </div>
 
-     </div>
- </div>
- <!-- <div class="d-inline-flex w-auto px-5 me-5 ms-4 mt-3 border border-green display-menu"> -->
-    
-<!-- </div> -->
-
-<!-- <div class="d-flex flex-column align-items-center d-inline-flex w-auto"> -->
-
-    <!-- <div class="content-top">
-        <ul>
-            
-        </ul> -->
-    <!-- </div> -->
-
-{% if user.is_authenticated%}
-{%else%}
+    {% if user.is_authenticated%}
+    {%else%}
     <p>You are not logged in</p>
     <a href="{% url 'login' %}">Log in</a>
-{%endif%}
-</div>
-{%endblock%}
+    {%endif%}
+    </div>
+    {%endblock%}
 </body>
+
 </html>

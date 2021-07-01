@@ -8,6 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 def home(request):
     return render(request, 'index.html')
 
+def search(request):
+    return render(request, 'search.html')
 # @csrf_exempt
 # def add(request):
 
