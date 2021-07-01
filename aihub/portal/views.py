@@ -10,6 +10,9 @@ def home(request):
 
 def search(request):
     return render(request, 'search.html')
+
+def admins (request):
+    return render(request, 'admin.html')
 # @csrf_exempt
 # def add(request):
 

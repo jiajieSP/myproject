@@ -28,7 +28,7 @@
     <nav class="navbar back-color">
         <div class="container">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{%url 'index' %}">
                 <img src="{% static "img/aihub.jpg" %}" alt="" loading="lazy" />
             </a>
         </div>
@@ -65,7 +65,7 @@
                                             <a class="nav-menu" href="#">Tools</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-menu" href="#">Admin</a>
+                                            <a class="nav-menu" href="{%url 'admin' %}">Admin</a>
                                         </li>
                                         <li class="nav-item">
                                             {% if user.is_authenticated%}

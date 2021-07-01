@@ -13,7 +13,8 @@ urlpatterns = [
     path('', views.home, name='index'),
     path('acccounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
-    path('search', views.search, name='search')
+    path('search', views.search, name='search'),
+    path('admins', views.admins, name='admin'),
 
     # path('add', views.add, name='add')
 ]
