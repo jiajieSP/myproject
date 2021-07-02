@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+		<th>Roll</th>
+		<th>Class</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for stud in student %}  
+      <tr>
+        <td>NO data{{stud.id}}</td>
+        <td>{{stud.roll}}</td>
+		<td>{{stud.sclass}}</td>
+		<td>{{stud.fname}}</td>
+		<td>{{stud.lname}}</td>
+      </tr>
+	  {% endfor %} 
+	</tbody>
+</table>	
+
+{%endblock%}

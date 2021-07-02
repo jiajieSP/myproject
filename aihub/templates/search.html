@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Search Engine</title>
+    <title>Search Engine</title>
 </head>
+
 <body>
 
- {% extends 'base.html' %}
+    {% extends 'base.html' %}
 
- {% block content %}
-<h1>Welcome Back</h1>
-<p>This is the homepage</p>
-<p>Hi my name is {{name}}</p>
+    {% block content %}
+    <div class="container ps-3">
+        <div class="row justify-content-md-center">
+            <div class="col ps-0">
+                <div class="container ps-0">
+                    <div>
+                        <!-- title -->
+                        <h3 class="text-green display-6 border-bottom ps-0 my-5 ms-3 mb-sm-2">Search Engine</h3>
+                            <!-- nav breadcrumb -->
+                            <div class="ms-sm-3">
+                                <nav style="--bs-breadcrumb-divider: '>>>';" aria-label="breadcrumb" class="text-green ">
+                                    <ol class="breadcrumb">
+                                      <li class="breadcrumb-item  ps-sm-2"><a href="{%url 'home' %}">Home</a></li>
+                                      <li class="breadcrumb-item active" aria-current="page">Search Engine</li>
+                                    </ol>
+                                  </nav>
+                            </div>
+                            <!-- search-bar -->
+                            <nav class="navbar navbar-light bg-light">
+                                <form class="form-inline" method="POST" action="{% url 'search_result' %}">
+                                    {% csrf_token %} 
+                                  <input class="form-control mr-sm-2" type="search" placeholder="Keyword Search" aria-label="Search" name="searched_result">
+                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </form>
+                              </nav>
+                    </div>
+                </div>
+            </div>
 
-<form action="add", method="POST">
-
-    Username : <input type="text" name="username"><br>
-    Password : <input type="text" name="password"><br>
-    <input type="submit">
-
-</form>
-{%endblock%}
+        </div>
+    </div>
+    {%endblock%}
 </body>
+
 </html>

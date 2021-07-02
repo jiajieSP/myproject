@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Results</title>
+</head>
+<body>
+
+ {% extends 'base.html' %}
+
+ {% block content %}
+
+<center>
+    {% if searched_result %}
+        <h1>You searched for {{searched_result}}</h1>
+        <h1>{{modelresult}}</h1>
+        <br/>
+        {% for modelresult in model %}
+            {{modelresult}}
+        {% endfor %}
+    {% else %}
+        <h1>Hey! you forget to search</h1>
+    {% endif %}
+    <h1>you searched for {{modelView}} </h1>
+    <h1>3{{show}}</h1>
+
+</center>
+
+{%endblock%}
+</body>
+</html>
